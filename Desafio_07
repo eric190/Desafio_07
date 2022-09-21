@@ -1,0 +1,70 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+
+namespace Desafio_07_Conclusivo
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Exibiraluno_TextChanged(object sender, EventArgs e)
+        {
+
+
+
+
+
+
+
+
+        }
+
+        private void btncliqueaqui_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Enviado com sucesso");
+        }
+    }
+}
+try
+{
+
+    MySqlConnection objcon = new MySqlConnection("server=localhost; port=3306;User Id=root; password=214100906");
+
+    Con.Open();
+    Cmm.CommandText = "INSERT INTO tb_usuario (Aluno, Nota) VALUES (@Aluno, @Nota,)";
+
+    objCmd.Parameters.Clear();
+    object txtAluno = null;
+    objCmd.Parameters.Add("@Aluno", NpgsqlDbType.Varchar, 50).Value = txtAluno.Text;
+    object txtNota = null;
+    objCmd.Parameters.Add("@Nota", NpgsqlDbType.Varchar, 50).Value = txtNota.Text;
+
+
+    objCmd.CommandType = CommandType.Text;
+    objCmd.Connection = Con;
+    objCmd.ExecuteNonQuery();
+    Con.Close();
+
+}
+catch (Exception) { MessageBox.Show("Erro ao enviar"); }
